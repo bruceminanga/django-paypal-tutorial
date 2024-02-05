@@ -16,6 +16,7 @@ def index(request):
 
 
 def process_payment(request):
+    request.session['order_id'] = '1'
     order_id = request.session.get('order_id')
     print(f'my order id is {order_id}')
     order = get_object_or_404(Order, id=order_id)
